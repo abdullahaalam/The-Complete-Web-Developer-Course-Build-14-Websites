@@ -15,10 +15,10 @@
         if($error) {
             $result = '<div class="alert alert-danger"><strong>There were error(s) in your form:</strong>'.$error.'</div>';
         } else {
-            if(mail("test@greenhost.org.uk", "Comment from website!", "Name: ".$_POST['name']." Email: ".$_POST['comment'])) {
-                $result = '<div class="alert alert-success"><strong>Thank you!</strong>I\'ll in touch.</div>';
+            if(mail("abdullah.alam.omi@gmail.com", "Comment from website!", "Name: ".$_POST['name']." Email: ".$_POST['email']." Comment: ".$_POST['comment'])) {
+                $result = '<div class="alert alert-success"><strong>Thank you!</strong> I\'ll be in touch.</div>';
             } else {
-                 $result = '<div class="alert alert-danger">Sorry, there was error in your message. Please try again later.</div>';
+                 $result = '<div class="alert alert-danger">Sorry, there was an error sending your message. Please try again later.</div>';
             }
         }
     }
@@ -66,7 +66,7 @@
 
                     <div class="form-group">
                         <label for="comment">Your Comment:</label>
-                        <textarea class="form-control" name="comment"><?php echo $_POST['name']; ?></textarea>
+                        <textarea class="form-control" name="comment"><?php echo $_POST['comment']; ?></textarea>
                     </div>
                     <input type="submit" name="submit" class="btn btn-success btn-lg" value="Submit" />
                 </form>
